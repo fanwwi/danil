@@ -14,28 +14,34 @@ body {
 
 /* ========== APP LAYOUT ========== */
 .App {
-  position: relative;
   min-height: 100vh;
   overflow: hidden;
+  background-color: #0f0f0f;
+
+  background-image:
+    radial-gradient(circle, #ff4d6d 2px, transparent 2px),
+    radial-gradient(circle, #ffd60a 3px, transparent 3px),
+    radial-gradient(circle, #4cc9f0 1.5px, transparent 1.5px),
+    radial-gradient(circle, #80ed99 2.5px, transparent 2.5px),
+    radial-gradient(circle, #c77dff 2px, transparent 2px),
+    radial-gradient(circle, #ffffff 1px, transparent 1px);
+
+  background-size:
+    173px 181px,
+    227px 193px,
+    149px 211px,
+    263px 167px,
+    197px 239px,
+    311px 187px;
+
+  background-position:
+    13px 27px,
+    91px 143px,
+    177px 58px,
+    44px 201px,
+    239px 119px,
+    128px 73px;
 }
-
-/* ========== BACKGROUND VIDEO ========== */
-.bgVideo {
-  position: fixed;
-
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 50%;
-  height: 100%;
-
-  object-fit: cover;
-
-  z-index: -2;
-  filter: brightness(0.55) saturate(1.2);
-}
-
 /* dark overlay */
 .App::before {
   content: "";
@@ -93,10 +99,30 @@ h1 {
   transform: scale(0.95);
 }
 
-/* ========== CAKE VIDEO ========== */
-.cakeVideo {
-  width: min(90%, 360px);
+/* ========== CAKE IMG ========== */
+.cakeImg {
+  width: min(90%, 380px);
   border-radius: 12px;
+
+  animation: glowPulse 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px rgba(255, 105, 180, 0.4));
+}
+
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.3));
+    transform: scale(1);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 40px rgba(255, 20, 147, 0.7));
+    transform: scale(1.02);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.3));
+    transform: scale(1);
+  }
 }
 
 /* ========== OVERLAY ========== */
